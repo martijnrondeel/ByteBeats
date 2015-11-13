@@ -1,4 +1,4 @@
-// License: https://martyn.pw/license.txt
+// MIT Licensed (https://martyn.pw/projects/bytebeats/LICENSE)
 // Inspired by viznut: http://countercomplex.blogspot.nl/2011/10/algorithmic-symphonies-from-one-line-of.html
 
 var musicObjects = [];
