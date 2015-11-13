@@ -26,6 +26,7 @@ html, body {
   width: 300px;
 }
 #examples p {
+  /* makes it a bit easier to copy examples */
   padding: 5px;
 }
 #examples {
