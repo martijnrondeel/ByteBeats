@@ -1,8 +1,8 @@
 # ByteBeats
 
-ByteBeats is a small program that turns math into 8-bit music. The program can be seen in action here: [martyn.pw](https://martyn.pw/projects/bytebeats/index.html).
+ByteBeats is a small program that turns math into 8-bit music. The program can be seen in action here: [martyn.pw](https://martyn.pw/projects/bytebeats/).
 
-For a much more complete ByteBeat 'editor' take a look at this project: [html5bytebeat](https://github.com/greggman/html5bytebeat)
+For a much more complete bytebeats 'editor' take a look at this project: [html5bytebeat](https://github.com/greggman/html5bytebeat)
 
 ## Contributing
 
