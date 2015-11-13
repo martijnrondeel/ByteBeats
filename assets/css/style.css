@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+#formulaBox {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  height: 350px;
+  border-radius: 3px;
+  padding: 3px;
+  background-color: rgba(0, 0, 0, 0.66);
+}
+#formula {
+  width: 300px;
+}
+#examples p {
+  padding: 5px;
+}
+#examples {
+  font-size: 11px;
+}
+.code {
+  border-radius: 3px;
+  background-color: rgb(212, 62, 62);
+  padding: 1px;
+}
+canvas {
+  display: block;
+}
