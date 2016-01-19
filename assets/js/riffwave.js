@@ -44,7 +44,7 @@ var FastBase64 = {
       return dst;
     } // end Encode
 
-}
+};
 
 FastBase64.Init();
 

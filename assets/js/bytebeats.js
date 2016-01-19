@@ -1,8 +1,8 @@
 // MIT Licensed (https://martyn.pw/projects/bytebeats/LICENSE)
 // Inspired by viznut: http://countercomplex.blogspot.nl/2011/10/algorithmic-symphonies-from-one-line-of.html
 
-var musicObjects = [];
-var canvas = document.getElementById('visualizer'),
+var musicObjects = [],
+  canvas = document.getElementById('visualizer'),
   context = canvas.getContext('2d');
 
 // resize the canvas to fill browser window dynamically
@@ -23,9 +23,9 @@ resizeCanvas();
 function updateCanvas(obj) {
   context.clearRect(0, 0, canvas.width, canvas.height);
 
-  var i;
-  var counter = 0;
-  var step = canvas.width / 65535;
+  var i,
+    counter = 0,
+    step = canvas.width / 65535;
   for (i = 0; i < obj.data.length; i += 30) {
     context.beginPath();
     // at 8 seconds fullscreen is used thus 16 seconds is x / 2
@@ -37,19 +37,18 @@ function updateCanvas(obj) {
 }
 
 function play() {
-  var audio = new Audio();
-  var wave = new RIFFWAVE();
-  var data = [];
-  var f = getFormula();
-  var formula = getFormula().toString();
-
-  var obj = new musicObj("", formula, "");
+  var audio = new Audio(),
+    wave = new RIFFWAVE(),
+    data = [],
+    f = getFormula(),
+    formula = getFormula().toString(),
+    obj = new musicObj("", formula, "");
 
   // Only make new audio file if formula is different than those already in cache
   if (!audioCached(obj, musicObjects)) {
 
-    var frequency = 8000;
-    var seconds = 16;
+    var frequency = 8000,
+      seconds = 16;
 
     wave.header.sampleRate = frequency;
     wave.header.bitsPerSample = 16;
@@ -78,14 +77,14 @@ function play() {
   } else {
     console.log("audio already exists, playing from cache");
 
-    var obj = audioCached(obj, musicObjects);
+    obj = audioCached(obj, musicObjects);
     updateCanvas(obj);
     playMusic(obj);
   }
 }
 
 function getFormula() {
-  var formula = document.getElementById('formula').value;
+  formula = document.getElementById('formula').value;
 
   formula = formula.replace(/sin/g, "Math.sin");
   formula = formula.replace(/cos/g, "Math.cos");
@@ -95,7 +94,7 @@ function getFormula() {
   formula = formula.replace(/floor/g, "Math.floor");
   formula = formula.replace(/ceil/g, "Math.ceil");
 
-  eval("var f = function (t) { return " + formula + "}");
+  eval("var f = function (t) { return " + formula + "}"); // jshint ignore:line, we really need evil eval() here
   return f;
 }
 
