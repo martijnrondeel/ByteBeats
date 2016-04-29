@@ -2,55 +2,55 @@
 <html>
 
 <head>
-  <title>ByteBeats</title>
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  <link href='assets/css/style.css' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css" />
+    <title>ByteBeats</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Turn math into 16-bit music.">
+    <meta name="keywords" content="bytebeats, math, 16bit music">
 </head>
 
 <body>
-  <canvas id="visualizer"></canvas>
+    <canvas id="visualizer"></canvas>
+    <div class="container">
+        <h1 class="title">ByteBeats</h1>
+        <div class="block">Make 16bit music with math and bitwise operators.
 
-  <div class="github-fork-ribbon-wrapper right">
-    <div class="github-fork-ribbon" style="background-color: #D43E3E;">
-      <a href="https://github.com/Martyn96/ByteBeats">Source on GitHub</a>
+            <br>
+            <br>You can use variable t (time), bitwise operators and
+            <span class="code">sin()</span>,
+            <span class="code">cos()</span>,
+            <span class="code">tan()</span>,
+            <span class="code">log()</span>,
+            <span class="code">ceil()</span>,
+            <span class="code">floor()</span>,
+            <span class="code">random()</span> to create a music formula!
+
+        </div>
+        <div class="block">
+            <form id="input">
+                <input type="button" value="Stop" onclick="stopMusic();" />
+                <input type="button" value="Play" onclick="play();" />
+                <div class="inputBox">
+                    <input type="text" value="(t*5&t>>7)" id="formula" autofocus />
+                </div>
+            </form>
+        </div>
+        <div class="block" id="examples">
+            <h3 class="miniTitle">Examples</h3>
+            <p><b>melody:</b> (t*5&t>>7)|(t*3&t>>70)|(t*7&t>>100)|(t*9&t>>200)</p>
+            <p><b>boss battle:</b> ((t>>10)
+                <<((t>>4)%([8,9,10,11][(t>>11)%4]-(t>>15)%4)))</p>
+            <p><b>derp song:</b> (t/1e7*t*t+t)%127|t>>4|t>>5|t%127+(t>>16)|t</p>
+            <p><b>noise:</b> t*random()</p>
+        </div>
+        <div class="push"></div>
     </div>
-  </div>
 
-  <div id="formulaBox">
-    <h1 style="text-align: center;">ByteBeats</h1>
-    <h3>Formula</h3>
-    <input type="text" id="formula" value="(t*5&t>>7)|(t*3&t>>10)">
-    <button onmousedown="play();">Play</button>
-    <button onmousedown="stopMusic();">Stop</button>
-    </br>
-    </br>
-    <h3>Info</h3>
-    <p>Using this script you can create music with formulas.
-      <br>
-      <br> Variable t stands for time. You can use variable t, bitwise operators and
-      <span class="code">sin()</span>,
-      <span class="code">cos()</span>,
-      <span class="code">tan()</span>,
-      <span class="code">log()</span>,
-      <span class="code">ceil()</span>,
-      <span class="code">floor()</span>,
-      <span class="code">random()</span> to create a music formula!
-    </p>
-    </br>
-    <h3>Examples</h3>
-    <span id="examples">
-      <p><b>melody:</b> (t*5&t>>7)|(t*3&t>>70)|(t*7&t>>100)|(t*9&t>>200)</p>
-      <p><b>boss battle:</b> ((t>>10)
-        <<((t>>4)%([8,9,10,11][(t>>11)%4]-(t>>15)%4)))</p>
-      <p><b>derp song:</b> (t/1e7*t*t+t)%127|t>>4|t>>5|t%127+(t>>16)|t</p>
-      <p><b>noise:</b> t*random()</p>
-    </span>
-    </br>
-  </div>
+    <footer><span>Source @ <a href="https://github.com/Martyn96/ByteBeats" target="_blank">GitHub</a></span></footer>
 
-  <script src="assets/js/riffwave.js"></script>
-  <script src="assets/js/bytebeats.js"></script>
+    <script src="assets/js/riffwave.js"></script>
+    <script src="assets/js/bytebeats.js"></script>
 </body>
 
 </html>

@@ -1,42 +1,136 @@
+/* Main page CSS */
+
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
 }
 html, body {
-  width: 100%;
-  height: 100%;
-  background: #000;
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 100%;
 }
-#formulaBox {
-  margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 400px;
-  height: 350px;
-  border-radius: 3px;
-  padding: 3px;
-  background-color: rgba(0, 0, 0, 0.66);
-}
-#formula {
-  width: 300px;
-}
-#examples p {
-  /* makes it a bit easier to copy examples */
-  padding: 5px;
-}
-#examples {
-  font-size: 11px;
-}
-.code {
-  border-radius: 3px;
-  background-color: rgb(212, 62, 62);
-  padding: 1px;
+html {
+    background-color: #000000;
+    font-family: 'Open Sans', sans-serif;
+    color: #ffffff;
 }
 canvas {
-  display: block;
+    display: block;
+    position: absolute;
+    z-index: -1;
+}
+.container {
+    min-height: 100%;
+    margin: 0 auto -30px;
+    width: 34em;
+}
+.title {
+    padding-top: 40px;
+    padding-bottom: 10px;
+    font-weight: 300;
+    text-align: center;
+    font-size: 2.4em;
+}
+.miniTitle {
+    font-weight: 300;
+    text-align: center;
+    font-size: 1.4em;
+    padding-bottom: 10px;
+}
+.block {
+    background-color: rgba(0, 0, 0, 0.88);
+    border-radius: 6px;
+    padding: 1em;
+    margin-top: 10px;
+}
+.code {
+    border-radius: 3px;
+    background-color: rgb(179, 59, 59);
+    padding: 1px;
+}
+#examples p {
+    padding: 5px;
+}
+
+/* Input CSS */
+
+input[type=text], select {
+    width: 100%;
+    padding: 11px 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.inputBox {
+    position: relative;
+    overflow: hidden;
+    padding-right: .5em;
+}
+
+/* Button CSS */
+
+input[type=button] {
+    float: right;
+    background-color: rgb(212, 62, 62);
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+    padding: 12px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+    outline: none;
+    cursor: pointer;
+    /* needed for mobile safari */
+    -webkit-appearance: none;
+}
+input[type=button]:hover {
+    background-color: rgb(171, 53, 53);
+}
+input[type=button]:active {
+    transform: translateY(3px);
+    box-shadow: none;
+}
+#input input {
+    margin: 2px;
+}
+
+/* Link CSS */
+
+a:link {
+    color: rgb(212, 62, 62);
+}
+a:visited {
+    color: rgb(212, 62, 62);
+}
+a:visited, a:visited {
+    text-decoration: none;
+}
+a:hover, a:active {
+    color: rgb(154, 57, 57);
+    text-decoration: underline;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    font-size: 12px;
+}
+footer, .push {
+    height: 30px;
+}
+footer span {
+    background-color: rgba(0, 0, 0, 0.88);
+    border-radius: 2px;
+    padding: 3px;
+}
+
+/* "Responsiveness" */
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 98%;
+    }
 }
