@@ -75,8 +75,7 @@ function play() {
     updateCanvas(obj);
     playMusic(obj);
   } else {
-    console.log("audio already exists, playing from cache");
-
+	// use cached audio
     obj = audioCached(obj, musicObjects);
     updateCanvas(obj);
     playMusic(obj);
@@ -94,7 +93,7 @@ function getFormula() {
   formula = formula.replace(/floor/g, "Math.floor");
   formula = formula.replace(/ceil/g, "Math.ceil");
 
-  eval("var f = function (t) { return " + formula + "}"); // jshint ignore:line, we really need evil eval() here
+  eval("var f = function (t) { return " + formula + "}");
   return f;
 }
 
@@ -111,7 +110,11 @@ function audioCached(obj, list) {
 function playMusic(musicObj) {
   // stop all playing music first
   stopMusic();
-  musicObj.audio.play();
+  
+  // workaround for promise bug
+  setTimeout(function () {    
+    musicObj.audio.play();
+  }, 50);
 }
 
 function stopMusic() {
