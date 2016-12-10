@@ -3,25 +3,30 @@
 * {
     margin: 0;
 }
+
 html, body {
     width: 100%;
     height: 100%;
 }
+
 html {
     background-color: rgb(0, 0, 0);
     font-family: 'Open Sans', sans-serif;
     color: rgb(255, 255, 255);
 }
+
 canvas {
     display: block;
     position: absolute;
     z-index: -1;
 }
+
 .container {
     min-height: 100%;
     margin: 0 auto -30px;
     width: 34em;
 }
+
 .title {
     padding-top: 40px;
     padding-bottom: 10px;
@@ -29,26 +34,31 @@ canvas {
     text-align: center;
     font-size: 2.4em;
 }
+
 .miniTitle {
     font-weight: 300;
     text-align: center;
     font-size: 1.4em;
     padding-bottom: 10px;
 }
+
 .block {
     background-color: rgba(0, 0, 0, 0.88);
     border-radius: 6px;
     padding: 1em;
     margin-top: 10px;
 }
+
 .code {
     border-radius: 3px;
     background-color: rgb(179, 59, 59);
     padding: 1px;
 }
+
 #examples p {
     padding: 5px;
 }
+
 
 /* Input CSS */
 
@@ -61,11 +71,13 @@ input[type=text], select {
     box-sizing: border-box;
     font-size: 14px;
 }
+
 .inputBox {
     position: relative;
     overflow: hidden;
     padding-right: .5em;
 }
+
 
 /* Button CSS */
 
@@ -85,32 +97,40 @@ input[type=button] {
     /* needed for mobile safari */
     -webkit-appearance: none;
 }
+
 input[type=button]:hover {
     background-color: rgb(171, 53, 53);
 }
+
 input[type=button]:active {
     transform: translateY(3px);
     box-shadow: none;
 }
+
 #input input {
     margin: 2px;
 }
+
 
 /* Link CSS */
 
 a:link {
     color: rgb(212, 62, 62);
 }
+
 a:visited {
     color: rgb(212, 62, 62);
 }
+
 a:visited, a:visited {
     text-decoration: none;
 }
+
 a:hover, a:active {
     color: rgb(154, 57, 57);
     text-decoration: underline;
 }
+
 
 /* Footer */
 
@@ -118,14 +138,17 @@ footer {
     text-align: center;
     font-size: 12px;
 }
+
 footer, .push {
     height: 30px;
 }
+
 footer span {
     background-color: rgba(0, 0, 0, 0.88);
     border-radius: 2px;
     padding: 3px;
 }
+
 
 /* "Responsiveness" */
 
